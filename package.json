@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "build-db": "psql -U rei -f schema.sql descriptions",
+    "build-db": "psql -d postgres -U rei -f schema.sql",
     "seed-db": "node ./database/seed.js"
   },
   "dependencies": {

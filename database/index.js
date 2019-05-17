@@ -9,11 +9,11 @@ const pool = new Pool({
 });
 
 const getDescriptions = (cb) => {
-  pool.query('SELECT * FROM testtable', (error, results) => {
+  pool.query('SELECT * FROM descriptionData', (error, results) => {
     if (error) {
       throw error;
     } else {
-      cb(results.rows[0].name);
+      cb(error, results.rows);
     }
   });
 };

@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS descriptions;
+
+CREATE DATABASE descriptions;
+
 \c descriptions;
 
 DROP TABLE IF EXISTS descriptionData;

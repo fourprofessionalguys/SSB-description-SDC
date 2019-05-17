@@ -15,23 +15,10 @@ app.get('/descriptions', (req, res) => {
       console.error(err)
       res.sendStatus(400);
     } else {
-      //console.log(JSON.stringify(result));
-      res.send(JSON.stringify(result));
+      res.send(result);
     }
   })
 });
-
-app.post('/seedDescriptions', (req, res) => {
-  db.seedDescriptions((err, result) => {
-    if(err) {
-      console.error(err)
-      res.sendStatus(400);
-    } else {
-      //console.log(JSON.stringify(result));
-      res.send(JSON.stringify(result));
-    }
-  })
-})
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
