@@ -9,11 +9,11 @@ const pool = new Pool({
 });
 
 const getDescriptions = (cb) => {
-  pool.query('SELECT * FROM descriptionData', (error, results) => {
+  pool.query('SELECT * FROM descriptionData WHERE name = \'La Sportiva Tarantulace Climbing Shoes\'', (error, results) => {
     if (error) {
       throw error;
     } else {
-      cb(error, results.rows);
+      cb(error, results.rows[0]);
     }
   });
 };

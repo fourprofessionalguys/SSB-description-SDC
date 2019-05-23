@@ -1,34 +1,53 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
-  "license": "",
+  "name": "Description-Clone",
+  "version": "0.0.1",
+  "description": "Clone of REI's product page description",
+  "author": "Jordan Boles",
+  "license": "MIT",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
-    "build-db": "psql -d postgres -U rei -f schema.sql",
-    "seed-db": "node ./database/seed.js"
+    "build-db": "psql -d descriptions -U rei -f schema.sql",
+    "seed-db": "node ./database/seed.js",
+    "test": "jest --config ./jest.config.js",
+    "build-dev": "webpack -d --watch",
+    "start": "nodemon server/index.js"
   },
   "dependencies": {
-    "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
     "express": "^4.16.4",
     "faker": "^4.1.0",
+    "jquery": "^3.4.1",
     "pg": "^7.11.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "sequelize": "^5.8.6",
-    "webpack": "^4.31.0",
-    "webpack-cli": "^3.3.2"
+    "sequelize": "^5.8.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.1",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
-    "nodemon": "^1.19.0"
+    "jest": "^24.8.0",
+    "jest-enzyme": "^7.0.2",
+    "jest-fetch-mock": "^2.1.2",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.32.0",
+    "webpack-cli": "^3.3.2"
   }
 }

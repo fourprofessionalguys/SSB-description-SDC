@@ -5,10 +5,12 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+Services
+  - https://github.com/montyjs/mg-product-wrapper
+  - https://github.com/montyjs/reviews-tm-service
+
+Proxy
+  - https://github.com/montyjs/jb-proxy
 
 ## Table of Contents
 
@@ -18,7 +20,10 @@
 
 ## Usage
 
-> Some usage instructions
+1. Run ```sh npm install ``` to install dependencies
+2. Run ```sh npm run build-db ```
+3. Run ```sh npm run seed-db ```
+4. Run ```sh npm run test ``` to test components
 
 ## Requirements
 
