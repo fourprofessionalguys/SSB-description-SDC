@@ -21,9 +21,38 @@ app.get('/descriptions', (req, res) => {
   });
 });
 
-// app.get('/', (req, res) => {
-//   res.sendStatus(200);
-// });
+app.get('/mensSizes', (req, res) => {
+  db.getMensSizes((err, result) => {
+    if (err) {
+      console.error(err);
+      res.sendStatus(400);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.get('/womensSizes', (req, res) => {
+  db.getWomensSizes((err, result) => {
+    if (err) {
+      console.error(err);
+      res.sendStatus(400);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.get('/euSizes', (req, res) => {
+  db.getEuSizes((err, result) => {
+    if (err) {
+      console.error(err);
+      res.sendStatus(400);
+    } else {
+      res.send(result);
+    }
+  });
+});
 
 app.listen(PORT, (err) => {
   if (err) console.log(err);

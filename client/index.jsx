@@ -13,13 +13,17 @@ class App extends React.Component {
 
     this.state = {
       data: {},
-      usWomens: ['5', '5.5', '5.5+', '6', '6.5', '7', '7.5', '7.5+', '8', '8.5', '9', '9.5', '9.5+', '10', '10.5', '11', '11.5', '11.5+', '12', '12.5', '13', '13.5', '13.5+', '14'],
-      usMens: ['4', '4.5', '4.5+', '5', '5.5', '6', '6.5', '6.5+', '7', '7.5', '8', '8.5', '8.5+', '9', '9.5', '10', '10.5', '11', '11.5', '12', '12.5', '12.5+', '13', '14'],
+      mensSizes: {},
+      womensSizes: {},
+      euSizes: {},
     };
   }
 
   componentDidMount() {
     this.getDesciption();
+    this.getMensSizes();
+    this.getWomensSizes();
+    this.getEuSizes();
   }
 
   getDesciption() {
@@ -37,15 +41,71 @@ class App extends React.Component {
     });
   }
 
+  getMensSizes() {
+    $.ajax({
+      method: 'GET',
+      url: '/mensSizes',
+      success: (mens) => {
+        this.setState({
+          mensSizes: {
+            mens,
+          },
+        });
+      },
+      error: () => {
+        console.error('Mens err');
+      },
+    });
+  }
+
+  getWomensSizes() {
+    $.ajax({
+      method: 'GET',
+      url: '/womensSizes',
+      success: (womens) => {
+        this.setState({
+          womensSizes: {
+            womens,
+          },
+        });
+      },
+      error: () => {
+        console.error('Womens err');
+      },
+    });
+  }
+
+  getEuSizes() {
+    $.ajax({
+      method: 'GET',
+      url: '/euSizes',
+      success: (eu) => {
+        this.setState({
+          euSizes: {
+            eu,
+          },
+        });
+      },
+      error: () => {
+        console.error('EU err');
+      },
+    });
+  }
+
   render() {
     const { data } = this.state;
-    const { usWomens } = this.state;
-    const { usMens } = this.state;
+    const { mensSizes } = this.state;
+    const { womensSizes } = this.state;
+    const { euSizes } = this.state;
+    const { mens } = mensSizes;
+    const { womens } = womensSizes;
+    const { eu } = euSizes;
+
     return (
       <div className="descriptionWrapper">
         <Overview {...data} />
         <Description {...data} />
-        <SizeChart mensSizes={usMens} womensSizes={usWomens} />
+        <SizeChart mensSizes={mens} womensSizes={womens} euSizes={eu} />
       </div>
     );
   }
