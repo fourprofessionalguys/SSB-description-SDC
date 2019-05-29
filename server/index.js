@@ -6,6 +6,7 @@ const cors = require('cors');
 const db = require('../database/index.js');
 
 const app = express();
+const port = process.env.LOCAL_PORT;
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, '../public/dist')));
@@ -56,7 +57,7 @@ app.get('/euSizes', (req, res) => {
   });
 });
 
-app.listen(process.env.PORT, (err) => {
+app.listen(port, (err) => {
   if (err) console.log(err);
-  console.log(`listening on port ${process.env.PORT}`);
+  console.log(`listening on port ${port}`);
 });
