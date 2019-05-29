@@ -12,19 +12,19 @@ const Overview = ({
     <div className="overview-specs">
       <div className="os-item">
         <span className="os-title">CLIMBING SHOE TYPE</span>
-        <div className="os-value">{`${climbingshoetype}`}</div>
+        <div className="os-value">{climbingshoetype}</div>
       </div>
       <div className="os-item">
         <span className="os-title">LAST</span>
-        <div className="os-value">{`${last}`}</div>
+        <div className="os-value">{last}</div>
       </div>
       <div className="os-item">
         <span className="os-title">CAN BE RESOLVED</span>
-        <div className="os-value">{`${resole}`}</div>
+        <div className="os-value">{resole}</div>
       </div>
       <div className="os-item">
         <span className="os-title">UPPER</span>
-        <div className="os-value">{`${upper}`}</div>
+        <div className="os-value">{upper}</div>
       </div>
     </div>
   </div>

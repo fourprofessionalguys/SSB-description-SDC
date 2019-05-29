@@ -1,42 +1,50 @@
-html {
-  font-size: 10px;
-}
-//take out before proxy, so refactor to find right sizing
-
-body {
-  margin: 0;
-  margin-top: 5rem;
-}
+// body {
+//   margin: 0;
+//   margin-top: 5rem;
+// }
 .descriptionWrapper {
   @import url('https://fonts.googleapis.com/css?family=Domine|Roboto:400,700&display=swap');
-
-  font-size: 1.6rem;
+  
+  font-size: 16px;
   font-family: Roboto;
   color: #292b2c;
+
   .description-title{
-    margin-top: 4rem;
+    margin-top: 1em;
     display: flex;
     justify-content: center;
-    font-size: 4rem;
+    font-size: 2.5em;
+    color: #2e2e2e;
     font-family: Domine;
+    font-weight: bold;
   }
   .description-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: left;
+    font-size: .9em;
+
     .description-features {
       line-height: 1.5;
-    }
+
+      h2 {
+        font-family: Domine;
+      }
+    };
 
     .description-tech-specs {
       .tech-title {
-        font-size: 2.133rem;
         font-family: Domine;
-        // font-weight: 600;
       }
 
       .description-table {
         tr:nth-child(even) {background-color: #f2f2f2;}
+        line-height: 1.8em;
+        padding: .25em;
+        td{
+          padding-right: .5em;
+        }
       }
     }
 
@@ -49,26 +57,26 @@ body {
       display: flex;
       justify-content: center;
       font-family: Domine;
-      font-size: 2rem;
+      font-size: 1.1em;
       font-weight: 700;
       line-height: 1.333;
-      padding: 4rem;
+      padding: 2.5em;
       text-align: center;
+      line-height: 1.5em;
     }
     
     .overview-specs {
       display: flex;
       justify-content: space-between;
       border-top: 1px solid grey;
-      padding: 3rem;
+      padding: 2em;
     }
 
     .os-title {
       font-family: Domine;
-      font-size: 1.3rem;
-      padding: .2rem .75rem;
+      font-size: .75em;
+      padding: .2em .75em;
       border-bottom: 2px solid #666;
-      // text-align: center;
     }
 
     .os-item {
@@ -76,37 +84,52 @@ body {
     }
 
     .os-value {
-      margin-top: .75rem;
-      font-size: 2rem;
+      margin-top: .75em;
+      font-size: 1.2em;
       font-family: Domine;
     }
   }
 
   .sizeChart-container {
     padding-left: 100px;
-    margin-bottom: 4rem;
+    margin-bottom: 4em;
+    color: #292A2B;
+    font-size: .9em;
+    
+    h2{
+      font-family: Domine;
+    }
+    
+    .sizeChart-wrap {
+      border: 1px solid #DDDDDD;
+    }
+
     table {
       border-collapse: separate;
       border-spacing: 0;
-      border-top: 1px solid grey;
+      tr:nth-child(2n) {background-color: #F9F9F9;}
     }
 
     td {
-      margin: 0;
-      border: 1px solid grey;
+      margin: .25em;
+      border: 1px solid #DDDDDD;
       white-space: nowrap;
       border-top-width: 0px;
+      height: 50px;
+      min-width: 156px;
+      text-indent: 1em;
     }
 
     div {
-      width: 500px;
+      width: 850px;
       overflow-x: scroll;
-      margin-left: 5em;
+      margin-left: 11.2em;
       padding: 10;
     }
 
     .headlong {
       font-weight: bold;
+      border-bottom: 2px solid #DDDDDD;
     }
 
     .headcol {
@@ -117,14 +140,13 @@ body {
       left: 0;
       top: auto;
       border-top-width: 1px;
+      border-right: 5px solid #CCCCCC;
       /*only relevant for first row*/
       margin-top: -1px;
       /*compensate for top border*/
-    }
-
-    .long {
-      background: white;
-      // letter-spacing: 1em;
+      text-indent: 1em;
+      vertical-align: middle;
+      line-height: 3.7em;
     }
   }
 }
