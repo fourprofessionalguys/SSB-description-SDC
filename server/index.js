@@ -1,11 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 const db = require('../database/index.js');
 
 const app = express();
-const PORT = 3003;
 
+app.use(cors());
 app.use(express.static(path.join(__dirname, '../public/dist')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -54,7 +56,7 @@ app.get('/euSizes', (req, res) => {
   });
 });
 
-app.listen(PORT, (err) => {
+app.listen(process.env.PORT, (err) => {
   if (err) console.log(err);
-  console.log(`listening on port ${PORT}`);
+  console.log(`listening on port ${process.env.PORT}`);
 });
