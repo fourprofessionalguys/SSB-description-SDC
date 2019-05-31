@@ -3,28 +3,41 @@ import PropTypes from 'prop-types';
 
 const SizeChart = ({ mensSizes, womensSizes, euSizes }) => (
   <div className="sizeChart-container">
-    <h2>Size Chart</h2>
     <div className="sizeChart-wrap">
-      <table>
+      <table className="header-table">
         <tbody>
           <tr>
-            <td className="headcol" />
-            {euSizes.map(num => <td className="headlong" key={`${num}headerSize`}>{num.toString()}</td>)}
+            <td className="headlong headcol" />
           </tr>
           <tr>
             <td className="headcol">U.S. Men's</td>
-            {mensSizes.map(num => <td className="long" key={`${num}mensSize`}>{num.toString()}</td>)}
           </tr>
           <tr>
             <td className="headcol">U.S. Women's</td>
-            {womensSizes.map(num => <td className="long" key={`${num}womensSize`}>{num.toString()}</td>)}
           </tr>
           <tr>
             <td className="headcol">EU</td>
-            {euSizes.map(num => <td className="long" key={`${num}euSize`}>{num.toString()}</td>)}
           </tr>
         </tbody>
       </table>
+      <div className="scroll-div">
+        <table className="shoeSizes-table">
+          <tbody>
+            <tr>
+              {euSizes.map(num => <td className="headlong" key={`${num}headerSize`}>{num.toString()}</td>)}
+            </tr>
+            <tr>
+              {mensSizes.map(num => <td className="long" key={`${num}mensSize`}>{num.toString()}</td>)}
+            </tr>
+            <tr>
+              {womensSizes.map(num => <td className="long" key={`${num}womensSize`}>{num.toString()}</td>)}
+            </tr>
+            <tr>
+              {euSizes.map(num => <td className="long" key={`${num}euSize`}>{num.toString()}</td>)}
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 );

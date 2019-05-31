@@ -32,23 +32,23 @@ const Description = ({
             <tbody>
               <tr>
                 <td><b>Best Use</b></td>
-                <td>{`${bestuse}`}</td>
+                <td>{bestuse}</td>
               </tr>
               <tr>
                 <td><b>Climbing Shoe Type</b></td>
-                <td>{`${climbingshoetype}`}</td>
+                <td>{climbingshoetype}</td>
               </tr>
               <tr>
                 <td><b>Last</b></td>
-                <td>{`${last}`}</td>
+                <td>{last}</td>
               </tr>
               <tr>
                 <td><b>Upper</b></td>
-                <td>{`${upper}`}</td>
+                <td>{upper}</td>
               </tr>
               <tr>
                 <td><b>Lining</b></td>
-                <td>{`${lining}`}</td>
+                <td>{lining}</td>
               </tr>
               <tr>
                 <td><b>Outsole</b></td>
@@ -56,19 +56,19 @@ const Description = ({
               </tr>
               <tr>
                 <td><b>Footwear Closure</b></td>
-                <td>{`${footwearclosure}`}</td>
+                <td>{footwearclosure}</td>
               </tr>
               <tr>
                 <td><b>Can Be Resoled</b></td>
-                <td>{`${resole}`}</td>
+                <td>{resole}</td>
               </tr>
               <tr>
                 <td><b>Gender</b></td>
-                <td>{`${gender}`}</td>
+                <td>{gender}</td>
               </tr>
               <tr>
                 <td><b>Weight (Pair)</b></td>
-                <td>{`${weight}`}</td>
+                <td>{weight}</td>
               </tr>
             </tbody>
           </table>

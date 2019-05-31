@@ -21,13 +21,12 @@
   .description-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: left;
+    margin-left: 8%;
     font-size: .9em;
 
     .description-features {
       line-height: 1.5;
-
+      margin-right: 4%;
       h2 {
         font-family: Domine;
       }
@@ -90,24 +89,52 @@
     }
   }
 
+  .size-chart-title {
+    font-size: 1.3em;
+    margin-left: 8%;
+    font-family: Domine;
+  }
+
   .sizeChart-container {
-    padding-left: 100px;
     margin-bottom: 4em;
     color: #292A2B;
     font-size: .9em;
-    
-    h2{
-      font-family: Domine;
-    }
-    
+    display: flex;
+    justify-content: center;
+      
     .sizeChart-wrap {
       border: 1px solid #DDDDDD;
+      display: flex;
+      flex-direction: row;
+      width: 83%
     }
 
-    table {
+    .header-table {
+      border-collapse: separate;
+      border-spacing: 0;
+      
+      .headcol {
+        font-weight: bold;
+        border-right: 5px solid #CCCCCC;
+        border-spacing: 0;
+        border-collapse: separate;
+      }
+    }
+      
+    .shoeSizes-table {
       border-collapse: separate;
       border-spacing: 0;
       tr:nth-child(2n) {background-color: #F9F9F9;}
+    }
+    
+    .scroll-div {
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+    
+    .headlong {
+      font-weight: bold;
+      border-bottom: 2px solid #DDDDDD;
     }
 
     td {
@@ -115,39 +142,11 @@
       border: 1px solid #DDDDDD;
       white-space: nowrap;
       border-top-width: 0px;
+      border-left-width: 0px;
       height: 50px;
       min-width: 156px;
       text-indent: 1em;
     }
 
-    div {
-      width: 850px;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      margin-left: 11.2em;
-      padding: 10;
-    }
-
-    .headlong {
-      font-weight: bold;
-      border-bottom: 2px solid #DDDDDD;
-    }
-
-    .headcol {
-      position: absolute;
-      margin-left: 100px;
-      font-weight: bold;
-      width: 5em;
-      left: 0;
-      top: auto;
-      border-top-width: 1px;
-      border-right: 5px solid #CCCCCC;
-      /*only relevant for first row*/
-      margin-top: -1px;
-      /*compensate for top border*/
-      text-indent: 1em;
-      vertical-align: middle;
-      line-height: 3.7em;
-    }
   }
 }

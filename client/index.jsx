@@ -105,6 +105,7 @@ class App extends React.Component {
       <div className="descriptionWrapper">
         <Overview {...data} />
         <Description {...data} />
+        <h2 className="size-chart-title">Size Chart</h2>
         <SizeChart mensSizes={mens} womensSizes={womens} euSizes={eu} />
       </div>
     );
