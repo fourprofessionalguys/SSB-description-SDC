@@ -29,7 +29,7 @@ class App extends React.Component {
   getDesciption() {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3003/descriptions',
+      url: `${window.location.origin}/descriptions`,
       success: (data) => {
         this.setState({
           data,
@@ -44,7 +44,7 @@ class App extends React.Component {
   getMensSizes() {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3003/mensSizes',
+      url: `${window.location.origin}/mensSizes`,
       success: (mens) => {
         this.setState({
           mensSizes: {
@@ -61,7 +61,7 @@ class App extends React.Component {
   getWomensSizes() {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3003/womensSizes',
+      url: `${window.location.origin}/womensSizes`,
       success: (womens) => {
         this.setState({
           womensSizes: {
@@ -78,7 +78,7 @@ class App extends React.Component {
   getEuSizes() {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3003/euSizes',
+      url: `${window.location.origin}/euSizes`,
       success: (eu) => {
         this.setState({
           euSizes: {
