@@ -1,5 +1,7 @@
 \c descriptions
 
+COPY descriptiondata (name, bestUse, climbingShoeType, last, upper, lining, outsole, footwearClosure, resole, gender, weight, quote) TO '/Users/srujan/SSB-description-SDC/descriptionData.csv' CSV DELIMITER ',' HEADER;
+COPY shoeSizes (name, sizes) TO '/Users/srujan/SSB-description-SDC/shoeData.csv' CSV DELIMITER ',' HEADER;
 
 COPY descriptiondata (name, bestUse, climbingShoeType, last, upper, lining, outsole, footwearClosure, resole, gender, weight, quote) FROM '/Users/srujan/SSB-description-SDC/descriptionData.csv' DELIMITER ',' CSV HEADER;
 COPY descriptiondata (name, bestUse, climbingShoeType, last, upper, lining, outsole, footwearClosure, resole, gender, weight, quote) FROM '/Users/srujan/SSB-description-SDC/descriptionData.csv' DELIMITER ',' CSV HEADER;
