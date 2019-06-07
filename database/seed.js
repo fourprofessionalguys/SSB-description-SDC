@@ -3,7 +3,7 @@ const { pool } = require('./index');
 
 const seed = () => {
   let i = 0;
-  while (i < 100) {
+  while (i < 100000) {
     let arr = [];
     if (i === 0) {
       arr = ['La Sportiva Tarantulace Climbing Shoes', 'Rock Climbing', 'Neutral', 'Slip-Lasted', 'Leather/synthetic leather', 'No', 'FriXion RS rubber', 'Lace-up', 'Yes', 'Unisex', '1 lb. 2.3 oz.', 'Designed for the climber looking for a single pair to do it all, the La Sportiva Tarantulace are jack-of-all-trades climbing git shoes comfortable enough for all-day climbs or a trip to the rock gym.'];
@@ -22,7 +22,7 @@ const seed = () => {
     }
   }
   let k = 0;
-  while (k < 50) {
+  while (k < 3) {
     const mensSizes = ['mensSizes', ['4', '4.5', '4.5+', '5', '5.5', '6', '6.5', '6.5+', '7', '7.5', '8', '8.5', '8.5+', '9', '9.5', '10', '10.5', '11', '11.5', '12', '12.5', '12.5+', '13', '14']];
     const womensSizes = ['womensSizes', ['5', '5.5', '5.5+', '6', '6.5', '7', '7.5', '7.5+', '8', '8.5', '9', '9.5', '9.5+', '10', '10.5', '11', '11.5', '11.5+', '12', '12.5', '13', '13.5', '13.5+', '14']];
     const euSizes = ['euSizes', ['36', '36.5', '37', '37.5', '38', '38.5', '39', '39.5', '40', '40.5', '41', '41.5', '42', '42.5', '43', '43.5', '44', '44.5', '45', '45.5', '46', '46.5', '47', '48']];

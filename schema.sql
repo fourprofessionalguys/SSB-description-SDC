@@ -7,7 +7,7 @@ CREATE DATABASE descriptions;
 DROP TABLE IF EXISTS descriptionData;
 
 CREATE TABLE descriptionData (
-  id SMALLSERIAL,
+  id bigserial,
   name varchar(50) NOT NULL,
   bestUse varchar(50) NOT NULL,
   climbingShoeType varchar(50) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE descriptionData (
 DROP TABLE IF EXISTS shoeSizes;
 
 CREATE TABLE shoeSizes (
-  id SMALLSERIAL,
+  id bigserial,
   name varchar(50) NOT NULL,
   sizes TEXT [] NOT NULL
 );
