@@ -10,9 +10,8 @@ const pool = process.env.NODE_ENV === 'production' ? new Pool({ connectionString
   password: process.env.LOCAL_PASSWORD,
   port: 5432,
 });
-
 const getDescriptions = (cb) => {
-  pool.query('SELECT * FROM descriptionData WHERE name = \'La Sportiva Tarantulace Climbing Shoes\'', (error, results) => {
+  pool.query(`SELECT * FROM descriptionData WHERE id =1`, (error, results) => {
     if (error) {
       throw error;
     } else {
