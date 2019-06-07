@@ -11,7 +11,7 @@ const pool = process.env.NODE_ENV === 'production' ? new Pool({ connectionString
   port: 5432,
 });
 const getDescriptions = (cb) => {
-  pool.query(`SELECT * FROM descriptionData WHERE id =1`, (error, results) => {
+  pool.query(`SELECT * FROM descriptionData WHERE id = ${Math.floor(Math.random() * 9999999)}`, (error, results) => {
     if (error) {
       throw error;
     } else {
