@@ -5,3 +5,10 @@ node_modules
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+MongoEC2Seed.sh
+newrelic.js
+newrelic_agent.log
+psqlCSVCreator.sql
+seed.sql
+shoeData.csv
