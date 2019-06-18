@@ -7,11 +7,11 @@ const url3 = process.env.DATABASE_URL3;
 const url4 = process.env.DATABASE_URL4;
 
 function connect(url) {
-  return MongoClient.connect(url, {useNewUrlParser: true }).then(client => client.db('descriptions'));
+  return MongoClient.connect(url, { useNewUrlParser: true }).then(client => client.db('descriptions'));
 }
 
 module.exports = async function () {
-  let databases = await Promise.all([connect(url1), connect(url2), connect(url3), connect(url4)])
+  let databases = await Promise.all([connect(url1), connect(url2), connect(url3), connect(url4)]);
 
   return {
     connection1: databases[0],
