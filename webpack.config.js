@@ -1,26 +1,39 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-  entry: path.join(__dirname, '/client/index.jsx'),
+  entry: {
+    main: './client/main.js',
+  },
   output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, '/public/dist'),
+    filename: './main.bundle.js',
+    path: path.join(__dirname, 'build'),
   },
   module: {
     rules: [
       {
-        test: /\.(s*)css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.jsx?/,
+        test: /\.s?css$/,
+        use: [
+          'isomorphic-style-loader',
+          {
+            loader: 'style-loader',
+          }, {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          }, {
+            loader: 'sass-loader',
+          },
+        ],
+      }, {
+        test: /\.jsx?$/,
         loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
-        },
-      }],
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.es6', '.css'],
   },
 };

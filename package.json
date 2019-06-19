@@ -12,7 +12,7 @@
     "seed-db": "node ./database/seed.js",
     "test": "jest --config ./jest.config.js",
     "build-dev": "webpack -d --watch",
-    "start": "nodemon server/index.js",
+    "start": "nodemon ./server/run.js",
     "seed": "psql postgres -U flamingeagle9000 -f schema.sql; node ./database/seed.js; psql -d descriptions -U flamingeagle9000 -f seed.sql; rm /Users/srujan/SSB-description-SDC/descriptionData.csv"
   },
   "dependencies": {
@@ -29,13 +29,15 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "redis": "^2.8.0"
+    "redis": "^2.8.0",
+    "regenerator-runtime": "^0.13.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.4.4",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
@@ -46,6 +48,7 @@
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
+    "isomorphic-style-loader": "^5.1.0",
     "jest": "^24.8.0",
     "jest-enzyme": "^7.0.2",
     "jest-fetch-mock": "^2.1.2",
