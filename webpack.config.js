@@ -1,26 +1,59 @@
 const path = require('path');
+const Htmlwebpackplugin = require('html-webpack-plugin');
+const Dynamic = require('dynamic-cdn-webpack-plugin');
+const Compress = require('compression-webpack-plugin');
+const Uglify = require('uglifyjs-webpack-plugin');
+const Minify = require('babel-minify-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, '/client/index.jsx'),
+  entry: {
+    main: './client/main.js',
+  },
   output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, '/public/dist'),
+    filename: './main.bundle.js',
+    path: path.join(__dirname, 'build'),
   },
   module: {
     rules: [
       {
-        test: /\.(s*)css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.jsx?/,
+        test: /\.s?css$/,
+        use: [
+          'isomorphic-style-loader',
+          {
+            loader: 'style-loader',
+          }, {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          }, {
+            loader: 'sass-loader',
+          },
+        ],
+      }, {
+        test: /\.jsx?$/,
         loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
-        },
-      }],
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.es6', '.css'],
+  },
+  externals: {
+    faker: 'faker',
+  },
+  plugins: [
+    new Htmlwebpackplugin(),
+    new Dynamic(),
+    new Minify(),
+    new Compress(),
+  ],
+  optimization: {
+    minimizer: [
+      new Uglify({
+        test: /main\.bundle\.js$/,
+      }),
+    ],
   },
 };

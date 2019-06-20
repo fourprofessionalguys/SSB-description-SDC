@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import style from './main.scss';
 
-import Overview from './Components/Overview';
-import Description from './Components/Description';
-import SizeChart from './Components/SizeChart';
+
+import Overview from './Overview';
+import Description from './Description';
+import SizeChart from './SizeChart';
 
 class App extends React.Component {
   constructor(props) {
@@ -112,4 +112,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('Description'));
+export default App;
