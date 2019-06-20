@@ -14,3 +14,4 @@ psqlCSVCreator.sql
 seed.sql
 shoeData.csv
 seed.sql
+main.bundle.*
