@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-
 import renderPage from '../iso-middleware/render.jsx';
 require('newrelic');
 require('dotenv').config();

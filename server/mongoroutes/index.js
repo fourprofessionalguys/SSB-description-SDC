@@ -62,7 +62,6 @@ const routes = function routes(app, dbs) {
       }
     });
   });
-
   app.get('/womensSizes', (req, res, next) => {
     dbs.connection.collection('shoeslist').find({ name: 'womensSizes' }).toArray((err, items) => {
       if (err) {

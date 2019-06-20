@@ -11,7 +11,7 @@ mongoseed.sh
 newrelic.js
 newrelic_agent.log
 psqlCSVCreator.sql
-seed.sql
 shoeData.csv
 seed.sql
 main.bundle.*
+
