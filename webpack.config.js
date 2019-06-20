@@ -1,5 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
+const Htmlwebpackplugin = require('html-webpack-plugin');
+const Dynamic = require('dynamic-cdn-webpack-plugin');
+const Compress = require('compression-webpack-plugin');
+const Uglify = require('uglifyjs-webpack-plugin');
+const Minify = require('babel-minify-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -35,5 +39,21 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.es6', '.css'],
+  },
+  externals: {
+    faker: 'faker',
+  },
+  plugins: [
+    new Htmlwebpackplugin(),
+    new Dynamic(),
+    new Minify(),
+    new Compress(),
+  ],
+  optimization: {
+    minimizer: [
+      new Uglify({
+        test: /main\.bundle\.js$/,
+      }),
+    ],
   },
 };

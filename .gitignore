@@ -7,8 +7,10 @@ node_modules
 !.elasticbeanstalk/*.global.yml
 
 MongoEC2Seed.sh
+mongoseed.sh
 newrelic.js
 newrelic_agent.log
 psqlCSVCreator.sql
 seed.sql
 shoeData.csv
+seed.sql

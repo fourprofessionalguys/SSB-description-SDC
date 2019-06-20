@@ -6,7 +6,7 @@ import App from '../shared/components/app';
 const renderPage = (req, res) => {
   const app = renderToString(<App />);
   const Html = renderToString(<HTML body={app} />);
-  return res.send(`<!DOCTYPE html>${Html}`);
+  res.send(`<!DOCTYPE html>${Html}`);
 };
 
 export default renderPage;

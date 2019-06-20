@@ -22,6 +22,11 @@ const strToArr = (str) => {
 };
 
 const routes = function routes(app, dbs) {
+  app.get('*.js', (req, res, next) => {
+    req.url = req.url + '.gz';
+    res.set('Content-Encoding', 'gzip');
+    next();
+  });
   app.get('/descriptions', (req, res) => {
     const randy = Math.floor(Math.random() * 10000000 + 1);
     const query = {};
@@ -35,7 +40,7 @@ const routes = function routes(app, dbs) {
       }
     });
   });
-  app.get('/mensSizes', (req, res) => {
+  app.get('/mensSizes', (req, res, next) => {
     dbs.connection.collection('shoeslist').find({ name: 'mensSizes' }).toArray((err, items) => {
       if (err) {
         console.log(err);
@@ -46,7 +51,7 @@ const routes = function routes(app, dbs) {
       }
     });
   });
-  app.get('/euSizes', (req, res) => {
+  app.get('/euSizes', (req, res, next) => {
     dbs.connection.collection('shoeslist').find({ name: 'euSizes' }).toArray((err, items) => {
       if (err) {
         console.log(err);
@@ -58,7 +63,7 @@ const routes = function routes(app, dbs) {
     });
   });
 
-  app.get('/womensSizes', (req, res) => {
+  app.get('/womensSizes', (req, res, next) => {
     dbs.connection.collection('shoeslist').find({ name: 'womensSizes' }).toArray((err, items) => {
       if (err) {
         console.log(err);

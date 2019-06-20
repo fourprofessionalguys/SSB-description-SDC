@@ -22,9 +22,11 @@ const port = process.env.LOCAL_PORT;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 const buildPath = path.join(__dirname, '../', 'build');
 app.use('/', express.static(buildPath));
 app.use(express.static(__dirname));
+
 
 if (process.env.DATABASE_TYPE === 'mongo') {
   initialize().then((dbs) => {
