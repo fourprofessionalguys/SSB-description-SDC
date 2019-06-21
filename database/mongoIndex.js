@@ -13,4 +13,5 @@ module.exports = async function () {
 
   return {
     connection: databases[0],
-
+  };
+};
