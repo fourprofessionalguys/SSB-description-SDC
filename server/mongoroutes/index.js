@@ -29,7 +29,7 @@ const getDescriptions = (cb) => {
   db.collection('descriptiondata').find(query).toArray((err, items) => {
     if (err) {
       return console.log(err);
-    };
+    }
     return cb(null, items[0]);
   });
 };
