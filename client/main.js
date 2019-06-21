@@ -11,4 +11,3 @@ const renderHydrate = (Component) => {
 };
 
 renderHydrate(App);
-
